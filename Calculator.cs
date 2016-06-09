@@ -8,12 +8,17 @@ namespace CalculatorKata
 		{
 		}
 
-		public int Add(string v)
+		public int Add(string entryText)
 		{
-			if (string.IsNullOrEmpty(v))
+			if (string.IsNullOrEmpty(entryText))
 				return 0;
+			return SplitAndSumNumbers(entryText);
+		}
+
+		private static int SplitAndSumNumbers(string text)
+		{
 			var retval = 0;
-			string[] numbers = v.Split(',');
+			string[] numbers = text.Split(',');
 			foreach (string number in numbers)
 				retval += Int32.Parse(number);
 			return retval;
