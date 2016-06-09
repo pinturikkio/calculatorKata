@@ -47,6 +47,12 @@ namespace CalculatorKata
 			AssertSum(10, "1,2,\n,3,\n,4");
 		}
 
+		[TestMethod]
+		public void StringWithCustomDelimitators()
+		{
+			AssertSum(3, "//;\n1;2");
+		}
+
 		private void AssertSum(int expected, string actual)
 		{
 			Assert.AreEqual(expected, _calc.Add(actual));

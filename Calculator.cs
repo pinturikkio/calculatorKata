@@ -20,7 +20,7 @@ namespace CalculatorKata
 			if (entryText.Contains("//;\n"))
 			{
 				__parser.AddSeparator(';');
-				entryText.Remove(0,4);
+				entryText = entryText.Remove(0,4);
 			}
 			return SplitAndSumNumbers(entryText);
 		}

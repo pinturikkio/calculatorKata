@@ -18,7 +18,7 @@ namespace CalculatorKata
 
 		public void AddSeparator(char separator)
 		{
-			_separators.ToList().Add(separator);
+			_separators.Add(separator);
 		}
 
 		public string[] SplitString(string text)
