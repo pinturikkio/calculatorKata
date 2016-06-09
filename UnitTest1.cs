@@ -47,8 +47,6 @@ namespace CalculatorKata
 			AssertSum(10, "1,2,\n,3,\n,4");
 		}
 
-		
-
 		private void AssertSum(int expected, string actual)
 		{
 			Assert.AreEqual(expected, _calc.Add(actual));
