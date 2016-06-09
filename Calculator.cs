@@ -12,13 +12,19 @@ namespace CalculatorKata
 		{
 			if (string.IsNullOrEmpty(entryText))
 				return 0;
+			if (entryText.Contains(",\n"))
+				throw new Exception("Missing number");
 			return SplitAndSumNumbers(entryText);
 		}
 
 		private static int SplitAndSumNumbers(string text)
 		{
 			var retval = 0;
-			string[] numbers = text.Split(',');
+			char[] separators = new char[] {
+				',',
+				'\n'
+			};
+			string[] numbers = text.Split(separators);
 			foreach (string number in numbers)
 				retval += Int32.Parse(number);
 			return retval;
